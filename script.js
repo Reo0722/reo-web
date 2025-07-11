@@ -49,4 +49,26 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const particles = new THREE.Geometry();
 for (let i = 0; i < 500; i++) {
   const x = (Math.random() - 0.5) * 100;
-  const y = (Math.rando
+  const y = (Math.random() - 0.5) * 100;
+  const z = (Math.random() - 0.5) * 100;
+  particles.vertices.push(new THREE.Vector3(x, y, z));
+}
+const material = new THREE.PointsMaterial({ color: 0x00ffff, size: 0.5 });
+const pointCloud = new THREE.Points(particles, material);
+scene.add(pointCloud);
+
+camera.position.z = 30;
+
+function animate() {
+  requestAnimationFrame(animate);
+  pointCloud.rotation.x += 0.0005;
+  pointCloud.rotation.y += 0.001;
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
