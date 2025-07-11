@@ -1,21 +1,32 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ゲーミングサイト</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaming Portal</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Gaming Zone</h1>
-    <div class="card">
-      <h2>ようこそ！</h2>
-      <p>最新のゲーム情報や、イベントをチェックしよう！</p>
-      <button>今すぐ参加</button>
-    </div>
+  <!-- ローディング画面 -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <p>Loading...</p>
   </div>
+
+  <!-- メインUI -->
+  <div class="main-container hidden">
+    <h1>⚡ Gaming Portal ⚡</h1>
+    <div class="card">
+      <h2>ようこそ、ゲーマー！</h2>
+      <p>最新イベントやアップデート情報をチェックしよう。</p>
+      <a href="#" class="btn" onclick="playClickSound()">スタート</a>
+    </div>
+    <canvas id="bgCanvas"></canvas>
+  </div>
+
+  <!-- スクリプト -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
