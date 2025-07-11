@@ -57,12 +57,8 @@ h1 {
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px #0ff;
+  transform: translateY(40px);
+  opacity: 0;
 }
 
 .btn {
@@ -75,15 +71,5 @@ h1 {
   font-weight: bold;
   transition: 0.3s;
   box-shadow: 0 0 10px #00f0ff;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-}
-
-#bgCanvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: 0;
+  transform: scale(1);
 }
